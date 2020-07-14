@@ -45,6 +45,7 @@ create () {
                 apt_updated="yeah"
                 sudo apt-get update -y
             fi
+            sudo apt-cache search postgresql
             sudo apt-get install -y \
                 postgresql-server-dev-${VERSION} postgresql-${VERSION}
         else
