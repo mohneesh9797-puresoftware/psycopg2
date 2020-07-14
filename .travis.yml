@@ -72,6 +72,7 @@ matrix:
         - export TEST_PAST=1
         - export TRAVIS_TOKEN=[secure]
 install:
+  - apt-get install -y bc 
   - pip install -U pip setuptools wheel
   - pip install .
   - rm -rf psycopg2.egg-info
