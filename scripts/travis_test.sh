@@ -43,8 +43,7 @@ run_test () {
         "import tests; tests.unittest.main(defaultTest='tests.test_suite')" \
         $VERBOSE
 }
-if [ `uname -m` = aarch64]; then
-
+if [ `uname -m` = 'aarch64' ]; then
     # Postgres versions supported by Travis CI
     if (( ! "$DONT_TEST_PRESENT" )); then
         run_test 10
