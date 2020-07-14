@@ -119,9 +119,6 @@ cd /
 # Postgres versions supported by Travis CI
 if (( ! "$DONT_TEST_PRESENT" )); then
     create 10
-    create 9.6
-    create 9.5
-    create 9.4
 fi
 
 # Unsupported postgres versions that we still support
