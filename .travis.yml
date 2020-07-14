@@ -3,8 +3,7 @@
 language: python
 matrix:
   include:
-    - dist: bionic
-      python: 3.8
+    - python: 3.8
       env:
         - export DONT_TEST_PRESENT=0
         - export TEST_FUTURE=0
@@ -12,8 +11,7 @@ matrix:
         - export PSYCOPG2_TEST_FAST=0
         - export TEST_PAST=0
         - export TRAVIS_TOKEN=[secure]
-    - dist: bionic
-      python: 3.7
+    - python: 3.7
       env:
         - export DONT_TEST_PRESENT=0
         - export TEST_FUTURE=0
@@ -21,8 +19,7 @@ matrix:
         - export PSYCOPG2_TEST_FAST=0
         - export TEST_PAST=0
         - export TRAVIS_TOKEN=[secure]
-    - dist: bionic
-      python: 3.6
+    - python: 3.6
       env:
         - export DONT_TEST_PRESENT=0
         - export TEST_FUTURE=0
@@ -30,8 +27,7 @@ matrix:
         - export PSYCOPG2_TEST_FAST=0
         - export TEST_PAST=0
         - export TRAVIS_TOKEN=[secure]
-    - dist: bionic
-      python: 3.5
+    - python: 3.5
       env:
         - export DONT_TEST_PRESENT=0
         - export TEST_FUTURE=0
