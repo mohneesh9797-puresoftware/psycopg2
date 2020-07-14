@@ -1,16 +1,16 @@
 # Travis CI configuration file for psycopg2
 
 language: python
-
+arch:
+    - amd64
+    - arm64
 matrix:
   include:
-    - python: 2.7
     - python: 3.8
     - python: 3.7
     - python: 3.6
     - python: 3.5
-    - python: 3.4
-
+    
 install:
   - pip install -U pip setuptools wheel
   - pip install .
