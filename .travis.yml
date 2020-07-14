@@ -3,39 +3,7 @@
 language: python
 matrix:
   include:
-    - python: 3.8
-      env:
-        - export DONT_TEST_PRESENT=0
-        - export TEST_FUTURE=0
-        - export TEST_VERBOSE=0
-        - export PSYCOPG2_TEST_FAST=0
-        - export TEST_PAST=1
-        - export TRAVIS_TOKEN=[secure]
-    - python: 3.7
-      env:
-        - export DONT_TEST_PRESENT=0
-        - export TEST_FUTURE=0
-        - export TEST_VERBOSE=0
-        - export PSYCOPG2_TEST_FAST=0
-        - export TEST_PAST=1
-        - export TRAVIS_TOKEN=[secure]
-    - python: 3.6
-      env:
-        - export DONT_TEST_PRESENT=0
-        - export TEST_FUTURE=0
-        - export TEST_VERBOSE=0
-        - export PSYCOPG2_TEST_FAST=0
-        - export TEST_PAST=1
-        - export TRAVIS_TOKEN=[secure]
-    - python: 3.5
-      env:
-        - export DONT_TEST_PRESENT=0
-        - export TEST_FUTURE=0
-        - export TEST_VERBOSE=0
-        - export PSYCOPG2_TEST_FAST=0
-        - export TEST_PAST=1
-        - export TRAVIS_TOKEN=[secure]
-    - arch: arm64
+    - dist: bionic
       python: 3.8
       env:
         - export DONT_TEST_PRESENT=0
@@ -44,7 +12,7 @@ matrix:
         - export PSYCOPG2_TEST_FAST=0
         - export TEST_PAST=1
         - export TRAVIS_TOKEN=[secure]
-    - arch: arm64
+    - dist: bionic
       python: 3.7
       env:
         - export DONT_TEST_PRESENT=0
@@ -53,7 +21,7 @@ matrix:
         - export PSYCOPG2_TEST_FAST=0
         - export TEST_PAST=1
         - export TRAVIS_TOKEN=[secure]
-    - arch: arm64
+    - dist: bionic
       python: 3.6
       env:
         - export DONT_TEST_PRESENT=0
@@ -62,7 +30,47 @@ matrix:
         - export PSYCOPG2_TEST_FAST=0
         - export TEST_PAST=1
         - export TRAVIS_TOKEN=[secure]
-    - arch: arm64
+    - dist: bionic
+      python: 3.5
+      env:
+        - export DONT_TEST_PRESENT=0
+        - export TEST_FUTURE=0
+        - export TEST_VERBOSE=0
+        - export PSYCOPG2_TEST_FAST=0
+        - export TEST_PAST=1
+        - export TRAVIS_TOKEN=[secure]
+    - dist: bionic
+      arch: arm64
+      python: 3.8
+      env:
+        - export DONT_TEST_PRESENT=0
+        - export TEST_FUTURE=0
+        - export TEST_VERBOSE=0
+        - export PSYCOPG2_TEST_FAST=0
+        - export TEST_PAST=1
+        - export TRAVIS_TOKEN=[secure]
+    - dist: bionic
+      arch: arm64
+      python: 3.7
+      env:
+        - export DONT_TEST_PRESENT=0
+        - export TEST_FUTURE=0
+        - export TEST_VERBOSE=0
+        - export PSYCOPG2_TEST_FAST=0
+        - export TEST_PAST=1
+        - export TRAVIS_TOKEN=[secure]
+    - dist: bionic
+      arch: arm64
+      python: 3.6
+      env:
+        - export DONT_TEST_PRESENT=0
+        - export TEST_FUTURE=0
+        - export TEST_VERBOSE=0
+        - export PSYCOPG2_TEST_FAST=0
+        - export TEST_PAST=1
+        - export TRAVIS_TOKEN=[secure]
+    - dist: bionic
+      arch: arm64
       python: 3.5
       env:
         - export DONT_TEST_PRESENT=0
