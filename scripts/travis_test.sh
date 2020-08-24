@@ -10,6 +10,11 @@
 #
 # The variables can be set in the travis configuration
 # (https://travis-ci.org/psycopg/psycopg2/settings)
+export TEST_PAST=${TEST_PAST:-0}
+export TEST_FUTURE=${TEST_FUTURE:-0}
+export TEST_VERBOSE=${TEST_VERBOSE:-0}
+export PSYCOPG2_TEST_FAST=${PSYCOPG2_TEST_FAST:-0}
+export TEST_PRESENT=${TEST_PRESENT:-1}
 
 set -e -x
 
