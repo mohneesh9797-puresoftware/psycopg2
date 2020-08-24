@@ -43,14 +43,13 @@ run_test () {
         "import tests; tests.unittest.main(defaultTest='tests.test_suite')" \
         $VERBOSE
 }
-if [ `uname -m` = 'aarch64' ]; then
-    # Postgres versions supported by Travis CI
-    if (( ! "$DONT_TEST_PRESENT" )); then
+
+if (( "$TEST_PRESENT" )); then
+    if [[ "${TRAVIS_CPU_ARCH}" == "arm64" ]]; then
+    # Postgres versions supported by ARM64
         run_test 10
-    fi
-else 
+    else
     # Postgres versions supported by Travis CI
-    if (( ! "$DONT_TEST_PRESENT" )); then
         run_test 12
         run_test 11
         run_test 10
@@ -58,7 +57,7 @@ else
         run_test 9.5
         run_test 9.4
     fi
-fi 
+fi
 # Unsupported postgres versions that we still support
 # Images built by https://github.com/psycopg/psycopg2-wheels/tree/build-dinosaurs
 if (( "$TEST_PAST" )); then
