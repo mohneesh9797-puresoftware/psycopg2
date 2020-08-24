@@ -45,7 +45,6 @@ create () {
                 apt_updated="yeah"
                 sudo apt-get update -y
             fi
-            sudo apt-cache search postgresql
             sudo apt-get install -y \
                 postgresql-server-dev-${VERSION} postgresql-${VERSION}
         else
@@ -115,13 +114,12 @@ create () {
 
 # Would give a permission denied error in the travis build dir
 cd /
-if [ `uname -m` = 'aarch64' ]; then
-    # Postgres versions supported by Travis CI
-    if (( ! "$DONT_TEST_PRESENT" )); then
+
+if (( "$TEST_PRESENT" )); then
+    if [[ ${TRAVIS_CPU_ARCH} == "arm64" ]]; then
+    # Postgres versions supported by ARM64
         create 10
-    fi
-else
-    if (( ! "$DONT_TEST_PRESENT" )); then
+    else
         create 12
         create 11
         create 10
