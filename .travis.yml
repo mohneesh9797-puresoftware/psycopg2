@@ -1,82 +1,25 @@
 # Travis CI configuration file for psycopg2
 
 language: python
+
+dist: bionic
+
+arch:
+  - amd64
+  - arm64
+
+python:
+  - 3.5
+  - 3.6
+  - 3.7
+  - 3.8
+
 matrix:
   include:
-    - python: 3.8
-      env:
-        - export DONT_TEST_PRESENT=0
-        - export TEST_FUTURE=0
-        - export TEST_VERBOSE=0
-        - export PSYCOPG2_TEST_FAST=0
-        - export TEST_PAST=0
-        - export TRAVIS_TOKEN=[secure]
-    - python: 3.7
-      env:
-        - export DONT_TEST_PRESENT=0
-        - export TEST_FUTURE=0
-        - export TEST_VERBOSE=0
-        - export PSYCOPG2_TEST_FAST=0
-        - export TEST_PAST=0
-        - export TRAVIS_TOKEN=[secure]
-    - python: 3.6
-      env:
-        - export DONT_TEST_PRESENT=0
-        - export TEST_FUTURE=0
-        - export TEST_VERBOSE=0
-        - export PSYCOPG2_TEST_FAST=0
-        - export TEST_PAST=0
-        - export TRAVIS_TOKEN=[secure]
-    - python: 3.5
-      env:
-        - export DONT_TEST_PRESENT=0
-        - export TEST_FUTURE=0
-        - export TEST_VERBOSE=0
-        - export PSYCOPG2_TEST_FAST=0
-        - export TEST_PAST=0
-        - export TRAVIS_TOKEN=[secure]
-    - dist: bionic
-      arch: arm64
-      python: 3.8
-      env:
-        - export DONT_TEST_PRESENT=0
-        - export TEST_FUTURE=0
-        - export TEST_VERBOSE=0
-        - export PSYCOPG2_TEST_FAST=0
-        - export TEST_PAST=0
-        - export TRAVIS_TOKEN=[secure]
-    - dist: bionic
-      arch: arm64
-      python: 3.7
-      env:
-        - export DONT_TEST_PRESENT=0
-        - export TEST_FUTURE=0
-        - export TEST_VERBOSE=0
-        - export PSYCOPG2_TEST_FAST=0
-        - export TEST_PAST=0
-        - export TRAVIS_TOKEN=[secure]
-    - dist: bionic
-      arch: arm64
-      python: 3.6
-      env:
-        - export DONT_TEST_PRESENT=0
-        - export TEST_FUTURE=0
-        - export TEST_VERBOSE=0
-        - export PSYCOPG2_TEST_FAST=0
-        - export TEST_PAST=0
-        - export TRAVIS_TOKEN=[secure]
-    - dist: bionic
-      arch: arm64
-      python: 3.5
-      env:
-        - export DONT_TEST_PRESENT=0
-        - export TEST_FUTURE=0
-        - export TEST_VERBOSE=0
-        - export PSYCOPG2_TEST_FAST=0
-        - export TEST_PAST=0
-        - export TRAVIS_TOKEN=[secure]
+    - python: 2.7
+
 install:
-  - sudo apt-get install -y bc 
+  - sudo apt-get install -y bc
   - pip install -U pip setuptools wheel
   - pip install .
   - rm -rf psycopg2.egg-info
